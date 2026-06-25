@@ -10,7 +10,7 @@ services:
       - "8000:8000"
     environment:
       PYTHONUNBUFFERED: "1"
-      OLLAMA_BASE_URL: "http://biggus:11434"
+      OLLAMA_BASE_URL: "http://biggus.isr.lan:11434"
     volumes:
       - ./orlock-server/tempaudio:/app/tempaudio
       - ./orlock-server/transcriptions:/app/transcriptions

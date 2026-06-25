@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 WORKDIR /workspace/ros2-VAD-module
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    alsa-utils \
     build-essential \
     espeak-ng \
     ffmpeg \

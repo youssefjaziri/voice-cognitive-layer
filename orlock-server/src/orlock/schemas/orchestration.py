@@ -22,6 +22,8 @@ class OrchestrationResponse(BaseModel):
     rag_used: bool = Field(False, description="Whether RAG retrieved relevant context for this query")
     rag_context: Optional[str] = Field(None, description="The knowledge base excerpts injected into the prompt")
 
+    navigation_goal: Optional[str] = Field(None, description="Nav stack location ID to send to /set_goal, if navigation intent")
+
     processing_time_ms: float = Field(..., description="Total time for orchestration pipeline")
     pipeline_stages: Dict[str, float] = Field(
         default={},

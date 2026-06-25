@@ -16,6 +16,7 @@ Dependencies (install in your ROS2 environment):
 
 from collections import deque
 from enum import Enum
+import subprocess
 import time
 import sys
 from pathlib import Path
@@ -211,6 +212,25 @@ class SpeechSegmentationNode(Node):
         )
 
     # ------------------------------------------------------------------
+    def _send_navigation_goal(self, location_name: str) -> None:
+        """Call /set_goal ROS2 service to send the robot to a location."""
+        cmd = [
+            'ros2', 'service', 'call',
+            '/set_goal',
+            'monarch_drivers_v2/srv/SetGoal',
+            f'{{location_name: "{location_name}"}}'
+        ]
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+            if 'success=True' in result.stdout:
+                self.get_logger().info(f'[NAV] Goal accepted: {location_name}')
+            else:
+                self.get_logger().warn(f'[NAV] Goal rejected: {result.stdout.strip()}')
+        except subprocess.TimeoutExpired:
+            self.get_logger().error('[NAV] /set_goal service call timed out')
+        except Exception as exc:
+            self.get_logger().error(f'[NAV] /set_goal failed: {exc}')
+
     def _tts_speaking_callback(self, msg: Bool) -> None:
         """Mute input while TTS is speaking to prevent echo feedback."""
         self._tts_playing = msg.data
@@ -467,6 +487,11 @@ class SpeechSegmentationNode(Node):
                         self.monitor_logger.info("LLM", llm_response)
                     # Publish response to /orlock/response so tts_node can speak it
                     self._response_pub.publish(String(data=llm_response))
+
+                nav_goal = api_response.get('navigation_goal')
+                if nav_goal:
+                    self.get_logger().info(f'[NAV] Sending goal → {nav_goal}')
+                    self._send_navigation_goal(nav_goal)
 
                 if processing_time:
                     self.get_logger().info(f'[PERFORMANCE] Processing time: {processing_time:.0f}ms')

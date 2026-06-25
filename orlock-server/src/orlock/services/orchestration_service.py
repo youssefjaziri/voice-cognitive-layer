@@ -15,6 +15,7 @@ from ..intent.categories import RECOMMENDED_TEMPERATURES
 from .llm_service import LLMService
 from ..routing.model_router import ModelRouter
 from ..knowledge.retriever import KnowledgeRetriever
+from ..navigation.location_mapper import extract_navigation_goal
 
 
 logger = logging.getLogger(__name__)
@@ -160,6 +161,10 @@ class OrchestrationService:
 
             total_time = (time.time() - start_time) * 1000
 
+            nav_goal = None
+            if intent.category == IntentCategory.NAVIGATION:
+                nav_goal = extract_navigation_goal(transcription)
+
             return OrchestrationResponse(
                 user_text=transcription,
                 llm_response=llm_response,
@@ -171,6 +176,7 @@ class OrchestrationService:
                 routed_model=routed_model,
                 rag_used=bool(rag_context),
                 rag_context=rag_context or None,
+                navigation_goal=nav_goal,
                 processing_time_ms=total_time,
                 pipeline_stages=pipeline_times
             )

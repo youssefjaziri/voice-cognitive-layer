@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  orlock:
+    build:
+      context: ./orlock-server
+      dockerfile: Dockerfile
+    container_name: pfe2-orlock
+    ports:
+      - "8000:8000"
+    environment:
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./orlock-server/tempaudio:/app/tempaudio
+      - ./orlock-server/transcriptions:/app/transcriptions
+    restart: unless-stopped
+
+  ros2-vad:
+    build:
+      context: ./ros2-vad-module
+      dockerfile: Dockerfile
+    container_name: pfe2-ros2-vad
+    depends_on:
+      - orlock
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PULSE_SERVER: unix:${XDG_RUNTIME_DIR:-/run/user/1000}/pulse/native
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio
+    volumes:
+      - ./ros2-vad-module/audio_chunks:/workspace/ros2-vad-module/audio_chunks
+      - ${XDG_RUNTIME_DIR:-/run/user/1000}/pulse/native:${XDG_RUNTIME_DIR:-/run/user/1000}/pulse/native
+    restart: unless-stopped

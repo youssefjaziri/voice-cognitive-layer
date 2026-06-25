@@ -1,0 +1,222 @@
+[
+  {
+    "id": "guida_purpose",
+    "text": "GUIDA is an intelligent building assistant robot deployed at ISR (Institute of Systems and Robotics), University of Coimbra. It answers questions about the building, guides visitors to rooms, and provides information about labs and staff. It works fully offline.",
+    "category": "system"
+  },
+  {
+    "id": "isr_overview",
+    "text": "ISR (Instituto de Sistemas e Robótica) is a research institute at the University of Coimbra focused on robotics, automation, computer vision, and intelligent systems. The building is on the Polo II campus.",
+    "category": "system"
+  },
+  {
+    "id": "building_access",
+    "text": "The ISR building is open to researchers, students, and staff. General building hours are Monday to Friday 09:00–17:00. The entrance hall is accessible 24 hours. Some areas require a keycard or prior authorisation.",
+    "category": "schedule"
+  },
+  {
+    "id": "wifi",
+    "text": "WiFi is available throughout the ISR building. Staff and students use the Eduroam network. The auditorium (R017) also has WiFi for events.",
+    "category": "facilities"
+  },
+  {
+    "id": "restrooms",
+    "text": "There are two restrooms on the ground floor: the Men's Restroom (WC Homens, R008) and the Women's Restroom (WC Mulheres, R016).",
+    "category": "facilities"
+  },
+  {
+    "id": "vertical_access",
+    "text": "The ISR building has three elevator and staircase zones to reach floors 1 and 2: Zone T (elevator E05, stairs E06), Zone S (elevator E11, stairs E10), and Zone A (elevator E15, stairs E14). Stairs in Zone T are open 24 hours; others follow building hours.",
+    "category": "transit"
+  },
+  {
+    "id": "laboratories",
+    "text": "The ISR ground floor has three research laboratories: the Mobile Robotics Laboratory (R031), the Computer Vision Laboratory (R032), and the Automation Laboratory (R033). There is also a Mechatronics Laboratory (R007). All labs are open to researchers, students and staff during building hours.",
+    "category": "lab"
+  },
+  {
+    "id": "cafeteria_bar",
+    "text": "The Bar / Cafeteria (R040) is on the ground floor and serves coffee, tea, and light meals. Open 09:00–13:00 and 14:00–17:00 on weekdays.",
+    "category": "cafeteria"
+  },
+  {
+    "id": "library",
+    "text": "The ISR Library (R013, Biblioteca) is on the ground floor. It contains academic resources and reading space. Open 09:00–13:00 and 14:00–17:00. Access for researchers, students and staff.",
+    "category": "library"
+  },
+  {
+    "id": "auditorium",
+    "text": "The Auditorium (R017, Anfiteatro) can seat up to 495 people and is configurable for 200 seats. It has a projector and WiFi. Used for lectures, seminars, and events. Open 09:00–13:00 and 14:00–17:00.",
+    "category": "room"
+  },
+  {
+    "id": "meeting_room",
+    "text": "The Meeting Room (R018, Sala de Reuniões) is available for project meetings, seminars, and events. Open 09:00–13:00 and 14:00–17:00.",
+    "category": "room"
+  },
+  {
+    "id": "secretary",
+    "text": "The Accounting and Secretary Office (R002, Contabilidade e Secretaria) handles administrative tasks. Staffed by Maria José. Open 09:00–13:00 and 14:00–17:00.",
+    "category": "office"
+  },
+  {
+    "id": "R001",
+    "text": "Entrance Hall (room R001, floor 0): The main entrance area of the ISR building with two sofas for visitors and staff. Hours: Open 24 hours. Contact / occupant: Passou aqui o Professor Paulo Menezes às 10:00.",
+    "category": "location"
+  },
+  {
+    "id": "R002",
+    "text": "Accounting and Secretary Office (room R002, floor 0): Administrative office handling secretary and accounting activities. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 5 people. Contact / occupant: Senhora Maria José.",
+    "category": "office"
+  },
+  {
+    "id": "R003",
+    "text": "Office 0.10 (room R003, floor 0): Researcher office for individual use. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 1 people. Contact / occupant: Professor António Silva.",
+    "category": "office"
+  },
+  {
+    "id": "R004",
+    "text": "Metalwork Workshop (room R004, floor 0): Metalwork and fabrication workshop for mechanical projects. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "lab"
+  },
+  {
+    "id": "E05",
+    "text": "Elevator Zone T (room E05, floor 0): Elevator providing access to floors 1 and 2 (Zone T). Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 8 people.",
+    "category": "transit"
+  },
+  {
+    "id": "E06",
+    "text": "Stairs Zone T (room E06, floor 0): Staircase providing access to floors 1 and 2 (Zone T). Open 24 hours. Hours: Open 24 hours.",
+    "category": "transit"
+  },
+  {
+    "id": "R007",
+    "text": "Mechatronics Laboratory (room R007, floor 0): Mechatronics laboratory for robotics and automation projects. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "lab"
+  },
+  {
+    "id": "R008",
+    "text": "Men's Restroom (room R008, floor 0): Men's restroom on the ground floor. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "facility"
+  },
+  {
+    "id": "R009",
+    "text": "ISR Outdoor Area (room R009, floor 0): ISR outdoor garden area where you can eat, rest, or take a break. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "facility"
+  },
+  {
+    "id": "E10",
+    "text": "Stairs Zone S (room E10, floor 0): Staircase providing access to floors 1 and 2 (Zone S). Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "transit"
+  },
+  {
+    "id": "E11",
+    "text": "Elevator Zone S (room E11, floor 0): Elevator providing access to floors 1 and 2 (Zone S). Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "transit"
+  },
+  {
+    "id": "R012",
+    "text": "Projects Room (room R012, floor 0): Project development room for researchers and students. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "room"
+  },
+  {
+    "id": "R013",
+    "text": "Library (room R013, floor 0): ISR library with academic resources and reading space. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "library"
+  },
+  {
+    "id": "E14",
+    "text": "Stairs Zone A (room E14, floor 0): Staircase providing access to floors 1 and 2 (Zone A). Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "transit"
+  },
+  {
+    "id": "E15",
+    "text": "Elevator Zone A (room E15, floor 0): Elevator providing access to floors 1 and 2 (Zone A). Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "transit"
+  },
+  {
+    "id": "R016",
+    "text": "Women's Restroom (room R016, floor 0): Women's restroom on the ground floor. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "facility"
+  },
+  {
+    "id": "R040",
+    "text": "Bar / Cafeteria (room R040, floor 0): Bar and cafeteria serving coffee, tea, and light meals. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "cafeteria"
+  },
+  {
+    "id": "R017",
+    "text": "Auditorium (room R017, floor 0): Auditorium with seating for up to 495 people, configurable to 200. Has a projector and WiFi. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 495 people.",
+    "category": "room"
+  },
+  {
+    "id": "R018",
+    "text": "Meeting Room (room R018, floor 0): Meeting room for project meetings, seminars, and events. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "room"
+  },
+  {
+    "id": "R019",
+    "text": "Office 0.22 (room R019, floor 0): Researcher office 0.22. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R020",
+    "text": "Office 0.21 (room R020, floor 0): Researcher office 0.21. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R021",
+    "text": "Office 0.20 (room R021, floor 0): Researcher office 0.20. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R022",
+    "text": "Office 0.19 (room R022, floor 0): Researcher office 0.19. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R023",
+    "text": "Office 0.18 (room R023, floor 0): Researcher office 0.18. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R024",
+    "text": "Office 0.16 (room R024, floor 0): Researcher office 0.16. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R025",
+    "text": "Office 0.15 (room R025, floor 0): Researcher office 0.15. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R026",
+    "text": "Office 0.14 (room R026, floor 0): Researcher office 0.14. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R027",
+    "text": "Office 0.13 (room R027, floor 0): Researcher office 0.13. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R028",
+    "text": "Office 0.12 (room R028, floor 0): Researcher office 0.12. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "office"
+  },
+  {
+    "id": "R031",
+    "text": "Mobile Robotics Laboratory (room R031, floor 0): Mobile Robotics Laboratory for research in autonomous mobile systems. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "lab"
+  },
+  {
+    "id": "R032",
+    "text": "Computer Vision Laboratory (room R032, floor 0): Computer Vision Laboratory for image processing and visual perception research. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "lab"
+  },
+  {
+    "id": "R033",
+    "text": "Automation Laboratory (room R033, floor 0): Automation Laboratory for control systems and industrial automation research. Hours: Open 09:00–13:00 and 14:00–17:00. Capacity: 10 people.",
+    "category": "lab"
+  }
+]

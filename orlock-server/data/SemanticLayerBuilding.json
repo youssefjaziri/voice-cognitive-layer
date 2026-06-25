@@ -1,0 +1,322 @@
+[
+    {
+        "id": "R001",
+        "name": "Hall de Entrada",
+        "description": "Espaço de entrada do edifício ISR - Instituto Sistemas e Robótica. Tem dois sofás que podem servir para os utilizadores e visitantes do edifício.",
+        "floor": 0,
+        "capacity": 0,
+        "open": "Aberto 24 horas",
+        "access_restrictions": "Somente investigadores, alunos e funcionários",
+        "occupant": "Passou aqui o Professor Paulo Menezes às 10:00"
+    },
+    {
+        "id": "R002",
+        "name": "Contabilidade e Secretaria",
+        "description": "Escritório relacionado com atividades de secretaria e contabilidade",
+        "floor": 0,
+        "capacity": 5,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Somente investigadores, alunos e funcionários",
+        "occupant": "Senhora Maria José"
+    },
+    {
+        "id": "R003",
+        "name": "Gabinete 0.10",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 1,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas o investigador ou professor responsável",
+        "occupant": "Professor António Silva"
+    },
+    {
+        "id": "R004",
+        "name": "Oficina Serralharia",
+        "description": "Oficina de Serralharia",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "E05",
+        "name": "Elevador - Zona T",
+        "description": "Elevador de acesso aos pisos superiores, o piso 1 e o piso 2",
+        "floor": 0,
+        "capacity": 8,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "utilizadores dos pisos"
+    },
+    {
+        "id": "E06",
+        "name": "Escadas - Zona T",
+        "description": "Escadas de acesso aos pisos superiores, o piso 1 e o piso 2",
+        "floor": 0,
+        "capacity": 0,
+        "open": "Aberto 24 horas",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "utilizadores dos pisos"
+    },
+    {
+        "id": "R007",
+        "name": "Laboratorio de Mecatronica",
+        "description": "Laboratório de Mecatrónica",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R008",
+        "name": "WC Homens",
+        "description": "WC Homens, casa de banho homens, banheiro homens",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R009",
+        "name": "Exterior ISR",
+        "description": "Exterior ISR, espaço exterior do edifício ISR, onde podes: comer, fumar, descansar, etc.",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "E10",
+        "name": "Escadas - Zona S",
+        "description": "Escadas de acesso aos pisos superiores, o piso 1 e o piso 2",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "E11",
+        "name": "Elevador - Zona S",
+        "description": "Elevador de acesso aos pisos superiores, o piso 1 e o piso 2",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R012",
+        "name": "Projectos",
+        "description": "Sala de Projectos",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R013",
+        "name": "Biblioteca",
+        "description": "Biblioteca do ISR",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "E14",
+        "name": "Escadas - Zona A",
+        "description": "Escadas de acesso aos pisos superiores, o piso 1 e o piso 2",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "E15",
+        "name": "Elevador - Zona A",
+        "description": "Elevador de acesso aos pisos superiores, o piso 1 e o piso 2",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R016",
+        "name": "WC Mulheres",
+        "description": "WC Mulheres, casa de banho mulheres, banheiro mulheres",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R040",
+        "name": "Bar",
+        "description": "Um café, cafeteria ou cafetaria. Os cafés dedicam-se a servir café, chá e outras bebidas, bem como refeições ligeiras.",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R017",
+        "name": "Anfiteatro",
+        "description": "Anfiteatro com capacidade de 495 lugares sentados, moldável para 200 lugares. Tem um projetor e ligações wifi.",
+        "floor": 0,
+        "capacity": 495,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R018",
+        "name": "Sala de Reuniões",
+        "description": "Sala para desenvolver projetos, fazer reuniões ou eventos.",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R019",
+        "name": "Gabinete 0.22",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R020",
+        "name": "Gabinete 0.21",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R021",
+        "name": "Gabinete 0.20",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R022",
+        "name": "Gabinete 0.19",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R023",
+        "name": "Gabinete 0.18",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R024",
+        "name": "Gabinete 0.16",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R025",
+        "name": "Gabinete 0.15",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R026",
+        "name": "Gabinete 0.14",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R027",
+        "name": "Gabinete 0.13",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R028",
+        "name": "Gabinete 0.12",
+        "description": "Gabinete para uso dos investigadores",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R031",
+        "name": "Laboratorio de Robotica Movel",
+        "description": "Laboratório de Robótica Móvel",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R032",
+        "name": "Laboratorio de Visao Computacional",
+        "description": "Laboratório de Visão Computacional",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    },
+    {
+        "id": "R033",
+        "name": "Laboratorio de Automacao",
+        "description": "Laboratório de Automação",
+        "floor": 0,
+        "capacity": 10,
+        "open": "Aberto pelas 9:00 às 13:00, e das 14:00 às 17:00",
+        "access_restrictions": "Apenas investigadores, alunos e funcionários",
+        "occupant": "Alunos e Professores"
+    }
+]

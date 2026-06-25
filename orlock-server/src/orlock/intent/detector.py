@@ -22,25 +22,38 @@ Reply with ONLY valid JSON:
 {{"intent": "<category>", "confidence": <0.0-1.0>, "reasoning": "<one sentence>", "related_intents": []}}"""
 
 
-# Keyword patterns for syntactically unambiguous short intents.
-# Only categories where the surface form alone is decisive are listed here.
-# All other categories go to the LLM classifier.
-_RULE_PATTERNS: Dict[str, List[str]] = {
-    "greeting": [
+# Keyword patterns for syntactically unambiguous intents.
+# Tuple format: (patterns, max_chars) — use None for no length limit.
+_RULE_PATTERNS: Dict[str, tuple] = {
+    "greeting": ([
         "hello", "hi ", "hi,", "hi!", "hi.", "hey ", "hey,", "hey!",
         "good morning", "good evening", "good afternoon", "good day",
         "greetings", "howdy", "salut", "bonjour",
-    ],
-    "acknowledgement": [
+    ], 40),
+    "acknowledgement": ([
         "got it", "okay", "ok,", "ok.", "ok!", "understood", "alright",
         "thank you", "thanks", "perfect", "noted", "will do",
         "sounds good", "sure,", "sure.", "yes, i understand",
         "i understand", "great, thanks",
-    ],
+    ], 40),
+    "navigation": ([
+        "where is", "where are", "where can i find", "where can i",
+        "where do i", "where's", "how do i get to", "how to get to",
+        "how do i find", "find the", "find me", "take me to",
+        "guide me to", "can you guide", "can you take me",
+        "lead me to", "location of", "directions to",
+        "i'm looking for", "i am looking for", "i need to find",
+        "which room", "what room", "what floor",
+    ], None),
+    "question": ([
+        "what is", "what are", "what's", "what time", "what kind",
+        "who is", "who are", "who's",
+        "when is", "when does", "when can",
+        "is there", "is the", "do you know",
+        "can you tell me", "tell me about",
+        "how many", "how much", "how long",
+    ], None),
 }
-# Maximum text length for the rule-based check — longer utterances are unlikely
-# to be pure greetings or acknowledgements even if they contain a matching prefix.
-_RULE_MAX_CHARS = 40
 
 
 class IntentDetector:
@@ -83,18 +96,16 @@ class IntentDetector:
             )
 
     def _rule_based_classify(self, text: str) -> Optional[IntentResult]:
-        """Keyword pre-classifier for greetings and acknowledgements.
+        """Keyword pre-classifier for common intents.
 
-        Returns an IntentResult immediately if the text is short and starts with
-        an unambiguous pattern. Returns None for all other inputs so the LLM
-        classifier handles them as normal.
+        Returns an IntentResult immediately if the text matches an unambiguous
+        pattern. Returns None for all other inputs so the LLM classifier handles them.
         """
-        if len(text) > _RULE_MAX_CHARS:
-            return None
-
         lowered = text.strip().lower()
 
-        for intent_name, patterns in _RULE_PATTERNS.items():
+        for intent_name, (patterns, max_chars) in _RULE_PATTERNS.items():
+            if max_chars is not None and len(text) > max_chars:
+                continue
             for pattern in patterns:
                 if lowered == pattern.strip() or lowered.startswith(pattern):
                     category = IntentCategory(intent_name)

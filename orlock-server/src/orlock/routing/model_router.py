@@ -9,6 +9,7 @@ capable  → larger model for technical/multi-step reasoning
 safe     → deterministic output for high-stakes intents (temperature forced to 0)
 """
 import logging
+import os
 from typing import Optional
 
 import requests
@@ -109,7 +110,8 @@ class ModelRouter:
     def get_available_models() -> list[str]:
         """Query Ollama for installed model names."""
         try:
-            r = requests.get("http://localhost:11434/api/tags", timeout=5)
+            base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
+            r = requests.get(f"{base_url}/api/tags", timeout=5)
             r.raise_for_status()
             return [m["name"] for m in r.json().get("models", [])]
         except Exception as exc:

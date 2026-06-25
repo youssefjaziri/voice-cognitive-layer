@@ -11,6 +11,7 @@ facts by editing data/isr_knowledge.json and restarting the server.
 import json
 import logging
 import math
+import os
 import time
 from pathlib import Path
 from typing import List, Optional
@@ -19,7 +20,8 @@ import requests
 
 logger = logging.getLogger(__name__)
 
-_OLLAMA_EMBED_URL = "http://localhost:11434/api/embeddings"
+_OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
+_OLLAMA_EMBED_URL = f"{_OLLAMA_BASE_URL}/api/embeddings"
 _EMBED_MODEL = "nomic-embed-text"
 _DEFAULT_KB_PATH = Path(__file__).resolve().parents[3] / "data" / "isr_knowledge.json"
 

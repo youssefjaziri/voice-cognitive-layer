@@ -53,7 +53,7 @@ class MicNode(Node):
         super().__init__('mic_node')
 
         # --- parameters -------------------------------------------------------
-        self.declare_parameter('device', 'pulse')   # 'pulse' → PulseAudio default (works on WSL2 + native Linux)
+        self.declare_parameter('device', '')   # '' → system default; pass 'pulse' explicitly on PulseAudio systems
         self.declare_parameter('chunk_size', CHUNK_SAMPLES)
 
         device_param: str = self.get_parameter('device').get_parameter_value().string_value

@@ -25,4 +25,4 @@ COPY src ./src
 
 RUN bash -lc "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
 
-CMD ["bash", "-lc", "source /opt/ros/humble/setup.bash && source install/setup.bash && { ros2 run vad_component mic_node --ros-args -p device:=pulse & ros2 run vad_component vad_node & exec ros2 run vad_component speech_segmentation_node --ros-args -p enable_api:=true -p api_url:=http://orlock:8000 -p api_user_id:=docker_user -p output_dir:=/workspace/ros2-VAD-module/audio_chunks; }"]
+CMD ["bash", "-lc", "source /opt/ros/humble/setup.bash && source install/setup.bash && { ros2 run vad_component mic_node & ros2 run vad_component vad_node & exec ros2 run vad_component speech_segmentation_node --ros-args -p enable_api:=true -p api_url:=http://orlock:8000 -p api_user_id:=docker_user -p output_dir:=/workspace/ros2-VAD-module/audio_chunks; }"]

@@ -63,22 +63,23 @@ class PromptBuilder:
             full_prompt += f"\n\n{metadata_modifiers}"
 
         # Inject retrieved building knowledge for eligible intents.
+        rag_context = ""
         if user_input and self._rag and intent.category in _RAG_ELIGIBLE:
             rag_context = self._rag.retrieve(user_input, top_k=2)
             if rag_context:
                 full_prompt += f"\n\n{rag_context}"
 
-        return full_prompt
+        return full_prompt, rag_context
 
     def build_full_prompt(self,
                          user_input: str,
                          intent: IntentResult,
                          metadata: SpeechMetadata,
                          context: ConversationContext,
-                         quality: SpeechQualityScore) -> Tuple[str, str]:
-        """Build both system and user prompts."""
+                         quality: SpeechQualityScore) -> Tuple[str, str, str]:
+        """Build both system and user prompts. Returns (system_prompt, user_prompt, rag_context)."""
 
-        system_prompt = self.build_system_prompt(intent, metadata, context, quality, user_input)
+        system_prompt, rag_context = self.build_system_prompt(intent, metadata, context, quality, user_input)
 
         # Build user-facing prompt with context.
         # Skip for fast-tier intents — TinyLlama hallucinates when given history.
@@ -89,7 +90,7 @@ class PromptBuilder:
 
         user_prompt = f"{context_str}{user_input}" if context_str else user_input
 
-        return system_prompt, user_prompt
+        return system_prompt, user_prompt, rag_context
 
     def _load_template(self, category: IntentCategory) -> str:
         """Load prompt template for intent category."""

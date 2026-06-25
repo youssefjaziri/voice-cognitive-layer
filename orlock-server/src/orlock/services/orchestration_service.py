@@ -87,9 +87,9 @@ class OrchestrationService:
             quality = self.quality_analyzer.analyze(metadata)
             pipeline_times["quality_analysis"] = (time.time() - stage_start) * 1000
 
-            # Stage 4: Prompt Building
+            # Stage 4: Prompt Building (includes RAG retrieval)
             stage_start = time.time()
-            system_prompt, user_prompt = self.prompt_builder.build_full_prompt(
+            system_prompt, user_prompt, rag_context = self.prompt_builder.build_full_prompt(
                 transcription, intent, metadata, context, quality
             )
 
@@ -123,6 +123,7 @@ class OrchestrationService:
                     speech_quality_level=quality.quality_level,
                     metadata=metadata,
                     routed_model="canned",
+                    rag_used=False,
                     processing_time_ms=total_time,
                     pipeline_stages=pipeline_times,
                 )
@@ -168,6 +169,8 @@ class OrchestrationService:
                 speech_quality_level=quality.quality_level,
                 metadata=metadata,
                 routed_model=routed_model,
+                rag_used=bool(rag_context),
+                rag_context=rag_context or None,
                 processing_time_ms=total_time,
                 pipeline_stages=pipeline_times
             )

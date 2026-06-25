@@ -19,6 +19,9 @@ class OrchestrationResponse(BaseModel):
 
     routed_model: Optional[str] = Field(None, description="Ollama model selected by the model router")
 
+    rag_used: bool = Field(False, description="Whether RAG retrieved relevant context for this query")
+    rag_context: Optional[str] = Field(None, description="The knowledge base excerpts injected into the prompt")
+
     processing_time_ms: float = Field(..., description="Total time for orchestration pipeline")
     pipeline_stages: Dict[str, float] = Field(
         default={},

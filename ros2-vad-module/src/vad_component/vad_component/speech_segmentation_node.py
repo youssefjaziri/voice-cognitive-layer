@@ -453,6 +453,14 @@ class SpeechSegmentationNode(Node):
                     if self.monitor_logger:
                         self.monitor_logger.info("MODEL", routed_model)
 
+                rag_used = api_response.get('rag_used', False)
+                rag_context = api_response.get('rag_context', '')
+                if rag_used and rag_context:
+                    preview = rag_context.replace('\n', ' ')[:120]
+                    self.get_logger().info(f'[RAG] Context injected: {preview}…')
+                else:
+                    self.get_logger().info('[RAG] No relevant context found')
+
                 if llm_response:
                     self.get_logger().info(f'[LLM_RESPONSE] {llm_response}')
                     if self.monitor_logger:

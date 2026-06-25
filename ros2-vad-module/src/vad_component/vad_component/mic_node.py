@@ -68,6 +68,13 @@ class MicNode(Node):
             except ValueError:
                 device = device_param
 
+        # Query device's native sample rate; resample if it differs from 16 kHz
+        device_info = sd.query_devices(device, 'input')
+        self._device_sr: int = int(device_info['default_samplerate'])
+        self._needs_resample: bool = (self._device_sr != SAMPLE_RATE)
+        # Capture enough native samples to cover one 16 kHz chunk duration
+        device_blocksize = max(1, round(self._chunk * self._device_sr / SAMPLE_RATE))
+
         # --- audio queue (thread-safe) ----------------------------------------
         self._q: queue.Queue = queue.Queue()
         self._lock = threading.Lock()
@@ -83,14 +90,13 @@ class MicNode(Node):
         self._layout = MultiArrayLayout(dim=[dim], data_offset=0)
 
         # --- open InputStream -------------------------------------------------
-        # blocksize=chunk means the callback fires exactly every chunk samples.
-        # dtype='float32' keeps conversion simple; we scale to int16 before pub.
+        # Capture at the device's native rate; resample to 16 kHz before publish.
         try:
             self._stream = sd.InputStream(
-                samplerate=SAMPLE_RATE,
+                samplerate=self._device_sr,
                 channels=1,
                 dtype='float32',
-                blocksize=self._chunk,
+                blocksize=device_blocksize,
                 device=device,
                 callback=self._audio_callback,
             )
@@ -106,7 +112,8 @@ class MicNode(Node):
         dev_name = self._stream.device
         self.get_logger().info(
             f'MicNode ready – device={dev_name}, '
-            f'{SAMPLE_RATE} Hz, {self._chunk}-sample chunks → /audio/raw'
+            f'capture={self._device_sr} Hz → publish={SAMPLE_RATE} Hz, '
+            f'{self._chunk}-sample chunks → /audio/raw'
         )
 
     # ------------------------------------------------------------------
@@ -130,6 +137,12 @@ class MicNode(Node):
             frames: np.ndarray = self._q.get_nowait()
         except queue.Empty:
             return  # audio not ready yet – skip this timer tick
+
+        # Resample from device native rate to 16 kHz using linear interpolation
+        if self._needs_resample:
+            x_in = np.linspace(0.0, 1.0, len(frames))
+            x_out = np.linspace(0.0, 1.0, self._chunk)
+            frames = np.interp(x_out, x_in, frames)
 
         # float32 [-1, 1] → int16
         samples_int16: np.ndarray = np.clip(
